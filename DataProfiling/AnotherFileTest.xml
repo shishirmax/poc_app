@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{494E145C-71AA-4AA1-AE96-B0A4849FC0C5}" Name="AnotherFileTest.xml">
+      <DtsConnectionManagerID>AnotherFileTest.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}" Name="contata.database.windows.net.Edina_QA.contata.admin">
+      <DtsConnectionManagerID>contata.database.windows.net.Edina_QA.contata.admin</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{F43180B2-18B0-451E-8AD5-AE4EB486ACA3}" Name="ZeroRez_Split.xml">
+      <DtsConnectionManagerID>ZeroRez_Split.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table Schema="ZeroRez" Table="ZeroRez_split" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table Schema="ZeroRez" Table="ZeroRez_split" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table Schema="ZeroRez" Table="ZeroRez_split" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table Schema="ZeroRez" Table="ZeroRez_split" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table Schema="ZeroRez" Table="ZeroRez_split" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table Schema="ZeroRez" Table="ZeroRez_split" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table Schema="ZeroRez" Table="ZeroRez_split" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="-1" />
+        <Column Name="IZeroRezId" SqlDbType="BigInt" MaxLength="0" Precision="19" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="first_name" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>11</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="last_name" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>1</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="street1" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>176</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="street2" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>2076985</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="city" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>1491</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="state" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>305</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="postal_code" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>334</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="emails" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>110456</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="phones" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>387</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="client_tags" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>223782</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="net_promoter_labels" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>1571281</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="zones" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>6547</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="products" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>12336</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="source" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>499</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="job_count" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="last_service_date" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="lifetime_total" SqlDbType="VarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="IZeroRezId" SqlDbType="BigInt" MaxLength="0" Precision="19" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>92766</MaxValue>
+        <Mean>59747.1221819652</Mean>
+        <StdDev>23621.2618557359</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{2F06607B-9B9F-4B19-A74D-676D20EFB1E7}</DataSourceID>
+        <Table DataSource="contata.database.windows.net" Database="Edina_QA" Schema="ZeroRez" Table="ZeroRez_split" RowCount="2270687" />
+        <Column Name="IZeroRezId" SqlDbType="BigInt" MaxLength="0" Precision="19" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NumberOfDistinctValues>92766</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
