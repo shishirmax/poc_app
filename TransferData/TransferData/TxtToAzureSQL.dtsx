@@ -1,0 +1,2659 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/14/2017 11:27:56 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SHISHIRS"
+  DTS:CreatorName="CONTATAN\shishir"
+  DTS:DTSID="{61A02120-17D2-4A44-9D60-D13F6A69D084}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="TxtToAzureSQL"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{416B77E0-A1A7-403C-B1FE-DF96B4B1DD91}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[contata.database.windows.net.Edina.contata.admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1BDAA800-D7E5-4778-BC7B-45F8291CA8B0}"
+      DTS:ObjectName="contata.database.windows.net.Edina.contata.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=contata.database.windows.net;User ID=contata.admin;Initial Catalog=Edina;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvN8Wys1TvUmEp0IAlTq3dwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADKEohJfJF08U+o0XPsaux+AAAAAASAAACgAAAAEAAAAKG8G8erVKHP5Y/sLV9SaZUYAAAAz/WTBM5iMpc3D1MbtCC5ix/0nKbkdWVlFAAAANe0dChrjxhrCY4DCJZa1PGZcuJd</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[contata.database.windows.net.Edina_QA.contata.admin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E3260CF3-87CA-48D2-8C77-FC494A0F2A3B}"
+      DTS:ObjectName="contata.database.windows.net.Edina_QA.contata.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=contata.database.windows.net;User ID=contata.admin;Initial Catalog=Edina_QA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvN8Wys1TvUmEp0IAlTq3dwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAABt8RYXTB0KUDMOUd2w4nxAAAAAASAAACgAAAAEAAAAMZFkXBUr706yn/VCEtOV4cYAAAAFNVfGwjDYdh6nTkcfR4j/XRNxri/GDiPFAAAAFfv6LZKdVwUHsHcGg6n/JhpEcc8</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FCD9F598-110C-4F87-9225-8FF8846D6C73}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Edina\FromFTP\sales.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Record IDs"
+              DTS:DTSID="{05FF90EE-4555-440B-9A03-CD1B716C4493}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Company"
+              DTS:DTSID="{DAB5B75C-E75B-4E4B-A076-792BD46239A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Prefix"
+              DTS:DTSID="{79239D20-DF52-49D5-B482-E062CD6E9F06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First"
+              DTS:DTSID="{2C0C3385-B981-4553-BF45-9865E2D47A20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Middle"
+              DTS:DTSID="{D72DDBEF-5235-4DB9-A00F-F491C29F8B42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last"
+              DTS:DTSID="{C30C6C83-7476-49C2-965D-58C6F24A6D2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BuyerEmail"
+              DTS:DTSID="{2F1C90FD-8B18-49FB-AF66-EB8FA6B264F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Suffix"
+              DTS:DTSID="{19641B9E-FE79-46E3-8464-75897997B304}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{79848C45-21A8-40C2-9750-F280B14DC444}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROPERTY_INDICATOR"
+              DTS:DTSID="{AC86527A-915D-4262-9AB0-B79DB640F2D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MUNICIPALITY_NAME"
+              DTS:DTSID="{13483FE2-EAA2-4171-9D6D-24BC1C709899}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OWNER_CORPORATE_INDICATOR"
+              DTS:DTSID="{A9B9E3BD-974C-4A46-84E6-FA37619C1077}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAND_USE"
+              DTS:DTSID="{F2175737-FA00-434B-8BE0-22342F395AA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OWNER_NAME"
+              DTS:DTSID="{5FEB0B53-E627-40FC-86EA-94BC6B1B42A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OWNER_NAME_2"
+              DTS:DTSID="{F0EB63C9-D5A1-495C-902E-4EA60302486A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OWNER_NAME_3"
+              DTS:DTSID="{9F47BE81-A327-4B78-A4C9-E292D3557669}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ABSENTEE_OWNER"
+              DTS:DTSID="{3A30EC02-0F5D-4BC5-A2D6-37A52ADE5923}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address"
+              DTS:DTSID="{33A98877-C0FD-49F9-A218-1CC35E7822A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{774EBCA2-2D33-4A8A-8D06-68DA57C9ABBC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{ABC7832A-83A2-438F-B2C9-9BA3B87E1DA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Zip"
+              DTS:DTSID="{C6696532-4A55-43E9-AF21-24A52A6505D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Zip4"
+              DTS:DTSID="{74098B9F-8DCC-435A-8518-C730532D383E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Latitude"
+              DTS:DTSID="{0B0199A7-89D8-4CD9-BE15-C26D113B2790}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Longitude"
+              DTS:DTSID="{E26A93DE-0A76-4721-89C9-4A9735BF91AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SCF"
+              DTS:DTSID="{F98A962A-D66E-40D0-B711-1E69697BCC87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADDRESS_INDICATOR"
+              DTS:DTSID="{5E0C8AA9-D665-48DA-9672-490D4B6C89C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUSE_NUMBER_PREFIX"
+              DTS:DTSID="{EE548C62-5CF6-49DF-9389-4797F42DD8A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUSE_NUMBER"
+              DTS:DTSID="{0E589909-331C-41E2-8339-555ACEB6C043}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUSE_NUMBER_SUFFIX"
+              DTS:DTSID="{2AE4BEFE-48BD-44AF-A405-E3AFCD551B6F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DIRECTION"
+              DTS:DTSID="{915807E7-D0F6-4509-B126-4E072F17E2B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STREET_NAME"
+              DTS:DTSID="{EAD3019D-DBEE-4CC3-A793-667CBC1CD0D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MODE"
+              DTS:DTSID="{F5C95EFE-FAB6-498B-8056-079373336680}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUADRANT"
+              DTS:DTSID="{21F00493-1D4A-41B5-8539-23599B64554F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CARRIER_CODE"
+              DTS:DTSID="{CC8496D7-2787-467E-A22A-90D9F3F3E7DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUSE_NUMBER_PREFIX2"
+              DTS:DTSID="{2591A70B-BC78-46AA-BE06-389D27645AA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUSE_NUMBER2"
+              DTS:DTSID="{C5F98A46-287C-4ED6-A8F5-8AF4C9580F97}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOUSE_NUMBER_SUFFIX2"
+              DTS:DTSID="{68A6E04F-E714-4292-937D-73F87ADB5531}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DIRECTION2"
+              DTS:DTSID="{FB577DF2-0235-4D2B-99A7-B529FAE431A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STREET_NAME2"
+              DTS:DTSID="{A806B581-3455-4E49-9854-FE463ED9BD88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MODE2"
+              DTS:DTSID="{9C55325D-661A-4654-A005-0D46D83DDE11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUADRANT2"
+              DTS:DTSID="{AB74FF27-AD4D-4A2B-A6C0-CE9E23F7815F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CARRIER_CODE2"
+              DTS:DTSID="{455D7BB3-29F3-4972-8C44-98117D8F7E20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="APT_UNIT_NUMBER2"
+              DTS:DTSID="{C12BCFC7-3E02-43BC-A660-61045D6BCE63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CITY2"
+              DTS:DTSID="{ACD2D2B9-EB39-4E08-A84E-B99633743EC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STATE2"
+              DTS:DTSID="{BA4235FE-AB10-4CAC-A3F4-A609C3CDCA0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZIP_CODE2"
+              DTS:DTSID="{86D4DF4E-E18A-4B4F-8AF8-8062C8131055}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOTAL_VALUE_CALCULATED"
+              DTS:DTSID="{1DD7AE2F-3586-464C-A685-A752C5072060}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAND_VALUE_CALCULATED"
+              DTS:DTSID="{6F2A8E4D-3DFB-4BE3-BBF1-AF7E5A375B9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IMPROVEMENT_VALUE_CALCULATED"
+              DTS:DTSID="{13D958AF-279B-4F6F-A886-ABD231864520}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOTAL_VALUE_CALCULATED_IND"
+              DTS:DTSID="{9C56878E-DAD1-435B-91AF-8603F1EDABBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAND_VALUE_CALCULATED_IND"
+              DTS:DTSID="{9B17EE6F-22D8-47C5-8863-01B20574E16A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IMPROVEMENT_VALUE_CALCULATED_IND"
+              DTS:DTSID="{7AB659D4-E972-4A11-BD10-426F1A998730}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ASSD_TOTAL_VALUE"
+              DTS:DTSID="{8455AF1F-BA90-48C3-89F9-81C928A4B076}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ASSD_LAND_VALUE"
+              DTS:DTSID="{4D0C751A-DC6D-406B-90A0-E5CC1C580361}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ASSD_IMPROVEMENT_VALUE"
+              DTS:DTSID="{130D86F9-875B-45F9-A9FB-67552D4875D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ASSD_YEAR"
+              DTS:DTSID="{6417985E-9281-4254-AC92-B268EEF7D9ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MKT_TOTAL_VALUE"
+              DTS:DTSID="{1B0C6FDE-619D-4A4A-9163-8765EDC778BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MKT_LAND_VALUE"
+              DTS:DTSID="{8C718EF4-594C-46F2-BC4E-D9F009A1759D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MKT_IMPROVEMENT_VALUE"
+              DTS:DTSID="{300E2E47-F05C-42D3-8562-D04FFB31E68F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="APPR_TOTAL_VALUE"
+              DTS:DTSID="{4CB483F6-7B35-42F9-BDE3-146E4E05392C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="APPR_LAND_VALUE"
+              DTS:DTSID="{5A8DF54E-ED35-4D04-92DF-4AF781374EEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="APPR_IMPROVEMENT_VALUE"
+              DTS:DTSID="{935215AC-2094-4869-B28C-5DF02C58D91F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TAX_AMOUNT"
+              DTS:DTSID="{E340C5C5-7CF5-4FBF-B16A-D98DE6BF3E8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TAX_YEAR"
+              DTS:DTSID="{BC85F9D2-330A-4FE0-A77B-A7C64B938A1E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOCUMENT_YEAR"
+              DTS:DTSID="{AC489B51-1C87-4AF5-81C4-890FCA3291BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SALES_DEED_CATEGORY_TYPE"
+              DTS:DTSID="{C5DBDCA2-8841-439A-A579-6F45C518BB5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RECORDING_DATE"
+              DTS:DTSID="{54EB25E1-623D-4618-BC37-EE96E51FAA75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SALE_DATE"
+              DTS:DTSID="{87E77D19-C8C1-4214-8B2F-531744D63DFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SALE_PRICE"
+              DTS:DTSID="{0A9EBA7D-82BA-45D6-9E10-99BB18BFB0AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SALE_CODE"
+              DTS:DTSID="{C4188D2D-E4D2-4C0F-9D02-8A7C060EDA6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SELLER_NAME"
+              DTS:DTSID="{968F9A33-07BA-4A8A-98C8-06B1B2A7BD08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SellerEmail"
+              DTS:DTSID="{F62A8D65-1CB1-482A-991E-6EAAD1DD5B10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SALES_TRANSACTION_CODE"
+              DTS:DTSID="{0CA38B3E-2205-4D37-A42F-C904361C1629}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RESIDENTIAL_MODEL_INDICATOR"
+              DTS:DTSID="{5087E5CB-C81B-4C78-813F-5A658C74F395}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIOR_DOCUMENT_YEAR"
+              DTS:DTSID="{4040FDBE-E1EB-4F51-8C4D-32FF14AE10CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIOR_SLS_DEED_CATEGORY_TYPE"
+              DTS:DTSID="{7014D73D-6DB7-490A-AB34-4D8C0EEFF6C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIOR_RECORDING_DATE"
+              DTS:DTSID="{7F4535A3-5CDD-4FCA-B912-0B5E941D230A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIOR_SALE_DATE"
+              DTS:DTSID="{506CC2F9-C409-4174-AB84-14B2EA28FBDA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIOR_SALE_PRICE"
+              DTS:DTSID="{8BF96324-A1D1-479E-93C7-131D08BF693D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIOR_SALE_CODE"
+              DTS:DTSID="{6DC4A687-DA8C-4EE1-B0CA-1EB79A4F8F62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIOR_DEED_TYPE"
+              DTS:DTSID="{02F41D6E-D8DE-4A6F-A3A6-B1A19255FEF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FRONT_FOOTAGE"
+              DTS:DTSID="{8AB270E3-19E6-4AA2-8A45-AEFE8DDEFF50}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DEPTH_FOOTAGE"
+              DTS:DTSID="{AB4454CE-AE7D-45A1-B0CD-583C4538329B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACRES"
+              DTS:DTSID="{08167465-5C61-4A99-AFD8-43104E7D83C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAND_SQUARE_FOOTAGE"
+              DTS:DTSID="{8E9F3465-D74A-4E72-8B86-A70F66BB2ADB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UNIVERSAL_BUILDING_SQUARE_FEET"
+              DTS:DTSID="{1659CBAE-8224-44D4-928F-118D3BE88B35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUILDING_SQUARE_FEET_IND"
+              DTS:DTSID="{23E6D1BF-7E29-4815-9013-2CBA89F92A20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUILDING_SQUARE_FEET"
+              DTS:DTSID="{21E515EA-7FAA-4D4F-89EB-40A5E3FF2C2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LIVING_SQUARE_FEET"
+              DTS:DTSID="{0D8B1C85-471F-469E-98E8-D4B5299A8AC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GROUND_FLOOR_SQUARE_FEET"
+              DTS:DTSID="{55C80E8D-9D05-45E5-8F75-EE84F791B769}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GROSS_SQUARE_FEET"
+              DTS:DTSID="{49E56E99-55F6-410E-9681-53FE5FC194E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADJUSTED_GROSS_SQUARE_FEET"
+              DTS:DTSID="{AD2DACB1-DFF2-465B-8E6F-7B48AF96913A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BASEMENT_SQUARE_FEET"
+              DTS:DTSID="{E1AB2E35-D7F8-4957-B852-B48CCD1D0156}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GARAGE_PARKING_SQUARE_FEET"
+              DTS:DTSID="{E149690D-3B6C-442B-AEF9-DDE63F7C6758}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YEAR_BUILT"
+              DTS:DTSID="{2289B3AC-90F6-4D9D-9997-50A6A6EE28A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EFFECTIVE_YEAR_BUILT"
+              DTS:DTSID="{583C2A32-E9C9-4B7F-80F0-AD3F50EE7F62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BEDROOMS"
+              DTS:DTSID="{60411696-2DDA-4C13-A3E7-78A168D8B06E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOTAL_ROOMS"
+              DTS:DTSID="{1131D150-735F-4F91-8237-A065A1C6FCF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOTAL_BATHS_CALCULATED"
+              DTS:DTSID="{01346835-28EB-4C84-A6AF-67FA082D2A44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOTAL_BATHS"
+              DTS:DTSID="{659F8069-4F73-41A3-94A7-8B42920A49A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FULL_BATHS"
+              DTS:DTSID="{D27748B4-3B49-4FFE-BA79-89BF64BC4A6E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HALF_BATHS"
+              DTS:DTSID="{E7415FB7-E410-4AC8-82FB-0324F70CE3D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1QTR_BATHS"
+              DTS:DTSID="{2576BC35-2B10-400D-9A0A-14C845709B0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="3QTR_BATHS"
+              DTS:DTSID="{B0745B24-3727-4150-A29A-7C6F6746268C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BATH_FIXTURES"
+              DTS:DTSID="{FF506528-8733-4FB7-B2A9-EC1932D3BA61}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AIR_CONDITIONING"
+              DTS:DTSID="{7E3B1B05-9557-4F0E-8EC8-BA03A080A4EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BASEMENT_FINISH"
+              DTS:DTSID="{B0D0A41C-DA0E-43D3-A90E-9A7C18C6FDD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BLDG_CODE"
+              DTS:DTSID="{60BC4CBB-2012-4AC6-B982-9CEBABC54B53}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BLDG_IMPV_CODE"
+              DTS:DTSID="{FBB34706-A9C1-41E7-B547-4772358A2289}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONDITION"
+              DTS:DTSID="{1A4A7BE6-1410-4987-930E-7AEE75A83116}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONSTRUCTION_TYPE"
+              DTS:DTSID="{53099E6E-A45A-4A4B-98D2-499BAA8AC7B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EXTERIOR_WALLS"
+              DTS:DTSID="{824C733F-AAFA-429D-AC98-844849325035}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIREPLACE_IND"
+              DTS:DTSID="{97B85E16-C97D-46A4-A024-5F4DCBECF747}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIREPLACE_NUMBER"
+              DTS:DTSID="{B4676807-0582-4498-B271-8E9BD0E6F294}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIREPLACE_TYPE"
+              DTS:DTSID="{F67C9197-E20C-4920-B602-9AD9D6AECADD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FOUNDATION"
+              DTS:DTSID="{761C28E7-2E01-4EBA-9DC2-70F4A49FB173}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLOOR"
+              DTS:DTSID="{6FF5F9D0-C86A-46F0-93C7-A83C35EC0CDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FRAME"
+              DTS:DTSID="{07DE23FE-017E-47AD-8102-40A32808E036}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GARAGE"
+              DTS:DTSID="{30D8114A-3ECB-4E68-B0DC-0CB8362983D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HEATING"
+              DTS:DTSID="{E43E7962-685E-43A7-9AED-ED4971CC9D1C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MOBILE_HOME_IND"
+              DTS:DTSID="{79E6FB70-D16C-4084-A305-F1B1F776B458}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARKING_SPACES"
+              DTS:DTSID="{2F02B70D-147C-418A-8F27-AB744EA92950}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARKING_TYPE"
+              DTS:DTSID="{367B6F99-41AA-44C7-AA88-0B32FBE1459D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POOL"
+              DTS:DTSID="{D1058F9F-C787-4654-90E1-B846EA9D09DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POOL_CODE"
+              DTS:DTSID="{D470F3D3-8948-454A-98DD-F5B8A0ADEC8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUALITY"
+              DTS:DTSID="{87D0EE02-FA83-44D1-83AE-068E260AF189}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ROOF_COVER"
+              DTS:DTSID="{01DC63C4-A0B6-43FB-8F6E-306F5F23AC36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ROOF_TYPE"
+              DTS:DTSID="{174130E6-2A2E-4E21-9555-C307E1B47EE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STORIES_CODE"
+              DTS:DTSID="{2B8463C0-0F21-4E60-8EA1-2F5844C00540}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STORIES_NUMBER"
+              DTS:DTSID="{72A46397-D57D-4CEA-AD11-8FB73AE0602F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STYLE"
+              DTS:DTSID="{DF6A2790-5EB3-4F8D-87F5-7D2DDC2987CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UNITS_NUMBER"
+              DTS:DTSID="{881E271B-37F6-4D1E-B764-C741D84E2714}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ELECTRIC_ENERGY"
+              DTS:DTSID="{B79D7B82-D02C-4BEC-BF26-199ACC602DDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FUEL"
+              DTS:DTSID="{53E4D4E9-B4E5-4987-8E2C-8D4A56500225}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEWER"
+              DTS:DTSID="{ECF38847-B5EA-4BFB-B11F-64FB40C5431C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WATER"
+              DTS:DTSID="{03509190-B960-437C-9399-256FF083513F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OWNER_OWNERSHIP_RIGHTS_CODE"
+              DTS:DTSID="{B597BBDA-AEEA-466F-AF30-B4650F091D34}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SUBDIVISION_NAME"
+              DTS:DTSID="{E52C05C3-F1B9-4950-A7E1-3813678B2ABC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOMESTEAD_EXEMPT2"
+              DTS:DTSID="{21906774-6462-494B-A6CB-986731756BF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VETERANS_EXEMPTION"
+              DTS:DTSID="{AEF50B08-2C8F-436F-A924-E117593FAA96}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DISABLED_EXEMPTION"
+              DTS:DTSID="{3AE41BEF-89A0-4D1D-98FC-F9EBDC584B2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WIDOW_EXEMPTION"
+              DTS:DTSID="{7838E2ED-6AE0-4290-AC1A-74F8AB6C66B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGED_EXEMPTION"
+              DTS:DTSID="{17E2BA34-9A76-4BD5-9E1E-5AA79DAA4BB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONSTRUCTION_CD"
+              DTS:DTSID="{C122BD67-9C80-4B7A-AFD7-85DB653C2568}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STYLE_CODE"
+              DTS:DTSID="{582E977D-F4ED-4F2E-8232-17200BECEA32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SELLER_CARRY_BACK"
+              DTS:DTSID="{61ED4D43-C11E-49D8-8B8F-2C9960364E1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SITUS_LATITUDE"
+              DTS:DTSID="{8B0E613C-F2E5-41E8-9E4C-A8FB6C803589}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SITUS_LONGITUE"
+              DTS:DTSID="{E4A122D1-AD15-43C6-94F9-C472A023B935}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LOAN_TO_VALUE"
+              DTS:DTSID="{5DE4CBE6-AC2E-444C-A258-8EEC9833C774}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CENSUS_TRACT"
+              DTS:DTSID="{4ACF4FEE-F2C0-48D4-9C60-2347F7DC8AD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZONING"
+              DTS:DTSID="{9B87F683-350C-47E2-B91A-ECC2FEF9F0AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RANGE"
+              DTS:DTSID="{38FCE246-2309-43BF-B197-276857032CE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOWNSHIP"
+              DTS:DTSID="{F547B2E3-4B1F-44D8-BE2A-EF27DC536564}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SECTION"
+              DTS:DTSID="{E890C3A0-66D8-4BA6-AA6C-E942C0F7F58B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUARTER_SECTION"
+              DTS:DTSID="{342BD202-DE18-497C-8598-B79D07FFEB8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOMESTEAD_EXEMPT1"
+              DTS:DTSID="{E561DCF1-CBF4-47BC-BBDE-5B6913C773D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COUNTY_USE_1"
+              DTS:DTSID="{AD3F835D-A68C-47CE-B6EA-4EE54DBBDC40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COUNTY_USE_2"
+              DTS:DTSID="{9BFBE3D0-E3BE-4702-A0AB-223DEAC87C7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C__x007C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NUMBER_OF_BUILDINGS"
+              DTS:DTSID="{EC6E108A-D4D4-43BE-B460-263915BAD9F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ListingId"
+              DTS:DTSID="{CEEA3949-448C-4768-A109-78BCA364CE56}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HomeSpotterData]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{DDAD6CD6-732D-4EC1-B117-BA160CFB56FD}"
+      DTS:ObjectName="HomeSpotterData">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Edina\FromMail\HomeSpotter\HS_DataFeed_20171130.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="user_id"
+              DTS:DTSID="{5246AE59-751E-4D38-8355-A8A2A3CFF954}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="user"
+              DTS:DTSID="{48C4DE80-14E9-4175-BE08-63610B6B068C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="hs_agent_id"
+              DTS:DTSID="{97002F86-106A-4E33-9DF2-2077AA1217DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="agent_name"
+              DTS:DTSID="{E022F383-657D-44FD-9441-44EEAEA1C319}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="device_id"
+              DTS:DTSID="{FDEC2479-B929-4D37-A7F7-6B761483A5C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ip_address"
+              DTS:DTSID="{04951CAF-3EE3-4DA1-955B-DBB1667008E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="session_start_utc"
+              DTS:DTSID="{B92611AC-1675-40DF-8CE3-BB947B962759}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="session_end_guess_utc"
+              DTS:DTSID="{6AAA119A-2AA2-4DBF-BA3B-B18BEB87DE2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="session_end_is_guess"
+              DTS:DTSID="{2D3EEE3B-C2EF-44AE-9D47-AE7E569BB908}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_count_listing_view"
+              DTS:DTSID="{43B98196-F051-439B-9F93-789B4AF210BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_count_run_saved_search"
+              DTS:DTSID="{0849E9B0-9932-4ED9-B603-27A7300506E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_count_add_saved_listing"
+              DTS:DTSID="{A6DE83CD-5A1A-4459-8C84-01553EBB9622}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_count_search_for_agent"
+              DTS:DTSID="{A7E7D512-4320-4AF4-8F39-801D12929C7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_count_share_app"
+              DTS:DTSID="{AFEE07AC-0AE9-44EF-BCF5-3971AEB813A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_count_app_feedback"
+              DTS:DTSID="{6DB29A3A-033E-455E-B553-2B700BD85147}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_count_call_company"
+              DTS:DTSID="{299D29EF-A006-4B23-9D3B-9E686F1E914E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_count_open_mortgage_calc"
+              DTS:DTSID="{CBF3E056-95E6-45D2-BCFD-4B810977394F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7E7DACEE-2B16-437E-B4E8-15DB4852AB8D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[HomeSpotterData]"
+                  connectionManagerRefId="Package.ConnectionManagers[HomeSpotterData]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[user_id]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[user_id]"
+                      name="user_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[user]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[user]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[user]"
+                      name="user"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hs_agent_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[hs_agent_id]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hs_agent_id]"
+                      name="hs_agent_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[agent_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[agent_name]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[agent_name]"
+                      name="agent_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[device_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[device_id]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[device_id]"
+                      name="device_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ip_address]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]"
+                      name="ip_address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_start_utc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[session_start_utc]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_start_utc]"
+                      name="session_start_utc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_end_guess_utc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[session_end_guess_utc]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_end_guess_utc]"
+                      name="session_end_guess_utc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_end_is_guess]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[session_end_is_guess]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_end_is_guess]"
+                      name="session_end_is_guess"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_listing_view]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_listing_view]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_listing_view]"
+                      name="event_count_listing_view"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_run_saved_search]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_run_saved_search]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_run_saved_search]"
+                      name="event_count_run_saved_search"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_add_saved_listing]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_add_saved_listing]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_add_saved_listing]"
+                      name="event_count_add_saved_listing"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_search_for_agent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_search_for_agent]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_search_for_agent]"
+                      name="event_count_search_for_agent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_share_app]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_share_app]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_share_app]"
+                      name="event_count_share_app"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_app_feedback]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_app_feedback]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_app_feedback]"
+                      name="event_count_app_feedback"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_call_company]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_call_company]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_call_company]"
+                      name="event_count_call_company"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_open_mortgage_calc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_open_mortgage_calc]"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_open_mortgage_calc]"
+                      name="event_count_open_mortgage_calc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="user_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[user]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="user" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[hs_agent_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="hs_agent_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[agent_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="agent_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[device_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="device_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ip_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ip_address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[session_start_utc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="session_start_utc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[session_end_guess_utc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="session_end_guess_utc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[session_end_is_guess]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="session_end_is_guess" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_listing_view]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="event_count_listing_view" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_run_saved_search]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="event_count_run_saved_search" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_add_saved_listing]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="event_count_add_saved_listing" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_search_for_agent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="event_count_search_for_agent" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_share_app]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="event_count_share_app" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_app_feedback]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="event_count_app_feedback" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_call_company]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="event_count_call_company" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_count_open_mortgage_calc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="event_count_open_mortgage_calc" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tblHomeSpotter_FF]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[contata.database.windows.net.Edina_QA.contata.admin]"
+                  connectionManagerRefId="Package.ConnectionManagers[contata.database.windows.net.Edina_QA.contata.admin]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[user_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="user_id"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[user_id]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[user_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[user]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="user"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[user]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[user]"
+                      name="user" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[hs_agent_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="hs_agent_id"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hs_agent_id]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hs_agent_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[agent_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="agent_name"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[agent_name]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[agent_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[device_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="device_id"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[device_id]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[device_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ip_address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ip_address"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ip_address]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[session_start_utc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="session_start_utc"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[session_start_utc]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_start_utc]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[session_end_guess_utc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="session_end_guess_utc"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[session_end_guess_utc]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_end_guess_utc]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[session_end_is_guess]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="session_end_is_guess"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[session_end_is_guess]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[session_end_is_guess]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_count_listing_view]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="event_count_listing_view"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_listing_view]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_listing_view]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_count_run_saved_search]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="event_count_run_saved_search"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_run_saved_search]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_run_saved_search]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_count_add_saved_listing]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="event_count_add_saved_listing"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_add_saved_listing]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_add_saved_listing]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_count_search_for_agent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="event_count_search_for_agent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_search_for_agent]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_search_for_agent]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_count_share_app]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="event_count_share_app"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_share_app]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_share_app]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_count_app_feedback]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="event_count_app_feedback"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_app_feedback]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_app_feedback]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_count_call_company]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="event_count_call_company"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_call_company]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_call_company]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_count_open_mortgage_calc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="event_count_open_mortgage_calc"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_open_mortgage_calc]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[event_count_open_mortgage_calc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeSpotterId]"
+                      dataType="i8"
+                      name="HomeSpotterId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[user_id]"
+                      dataType="nText"
+                      name="user_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[user]"
+                      dataType="nText"
+                      name="user" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hs_agent_id]"
+                      dataType="nText"
+                      name="hs_agent_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[agent_name]"
+                      dataType="nText"
+                      name="agent_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[device_id]"
+                      dataType="nText"
+                      name="device_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ip_address]"
+                      dataType="nText"
+                      name="ip_address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[session_start_utc]"
+                      dataType="nText"
+                      name="session_start_utc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[session_end_guess_utc]"
+                      dataType="nText"
+                      name="session_end_guess_utc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[session_end_is_guess]"
+                      dataType="nText"
+                      name="session_end_is_guess" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_listing_view]"
+                      dataType="nText"
+                      name="event_count_listing_view" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_run_saved_search]"
+                      dataType="nText"
+                      name="event_count_run_saved_search" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_add_saved_listing]"
+                      dataType="nText"
+                      name="event_count_add_saved_listing" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_search_for_agent]"
+                      dataType="nText"
+                      name="event_count_search_for_agent" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_share_app]"
+                      dataType="nText"
+                      name="event_count_share_app" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_app_feedback]"
+                      dataType="nText"
+                      name="event_count_app_feedback" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_call_company]"
+                      dataType="nText"
+                      name="event_count_call_company" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_count_open_mortgage_calc]"
+                      dataType="nText"
+                      name="event_count_open_mortgage_calc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GoodToImport]"
+                      dataType="bool"
+                      name="GoodToImport" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="nText"
+                      name="ErrorDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task"
+          TopLeft="209,155" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="216,118" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="220,250" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="292.5,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14,90"
+              Start="0,0"
+              End="14,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41"
+                    Point2="0,45"
+                    Point3="4,45" />
+                  <mssgle:LineSegment
+                    End="10,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10,45"
+                    Point2="14,45"
+                    Point3="14,49" />
+                  <mssgle:LineSegment
+                    End="14,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

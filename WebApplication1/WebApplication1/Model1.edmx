@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EdinaLocalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EdinaLocal.dbo.tblSales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblSales">
+          <Key>
+            <PropertyRef Name="SalesId" />
+          </Key>
+          <Property Name="SalesId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RecordIDs" Type="nvarchar(max)" />
+          <Property Name="Company" Type="nvarchar(max)" />
+          <Property Name="Prefix" Type="nvarchar(max)" />
+          <Property Name="First" Type="nvarchar(max)" />
+          <Property Name="Middle" Type="nvarchar(max)" />
+          <Property Name="Last" Type="nvarchar(max)" />
+          <Property Name="BuyerEmail" Type="nvarchar(max)" />
+          <Property Name="Suffix" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="PROPERTY_INDICATOR" Type="nvarchar(max)" />
+          <Property Name="MUNICIPALITY_NAME" Type="nvarchar(max)" />
+          <Property Name="OWNER_CORPORATE_INDICATOR" Type="nvarchar(max)" />
+          <Property Name="LAND_USE" Type="nvarchar(max)" />
+          <Property Name="OWNER_NAME" Type="nvarchar(max)" />
+          <Property Name="OWNER_NAME_2" Type="nvarchar(max)" />
+          <Property Name="OWNER_NAME_3" Type="nvarchar(max)" />
+          <Property Name="ABSENTEE_OWNER" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Zip" Type="nvarchar(max)" />
+          <Property Name="Zip4" Type="nvarchar(max)" />
+          <Property Name="Latitude" Type="nvarchar(max)" />
+          <Property Name="Longitude" Type="nvarchar(max)" />
+          <Property Name="SCF" Type="nvarchar(max)" />
+          <Property Name="ADDRESS_INDICATOR" Type="nvarchar(max)" />
+          <Property Name="HOUSE_NUMBER_PREFIX" Type="nvarchar(max)" />
+          <Property Name="HOUSE_NUMBER" Type="nvarchar(max)" />
+          <Property Name="HOUSE_NUMBER_SUFFIX" Type="nvarchar(max)" />
+          <Property Name="DIRECTION" Type="nvarchar(max)" />
+          <Property Name="STREET_NAME" Type="nvarchar(max)" />
+          <Property Name="MODE" Type="nvarchar(max)" />
+          <Property Name="QUADRANT" Type="nvarchar(max)" />
+          <Property Name="CARRIER_CODE" Type="nvarchar(max)" />
+          <Property Name="HOUSE_NUMBER_PREFIX2" Type="nvarchar(max)" />
+          <Property Name="HOUSE_NUMBER2" Type="nvarchar(max)" />
+          <Property Name="HOUSE_NUMBER_SUFFIX2" Type="nvarchar(max)" />
+          <Property Name="DIRECTION2" Type="nvarchar(max)" />
+          <Property Name="STREET_NAME2" Type="nvarchar(max)" />
+          <Property Name="MODE2" Type="nvarchar(max)" />
+          <Property Name="QUADRANT2" Type="nvarchar(max)" />
+          <Property Name="CARRIER_CODE2" Type="nvarchar(max)" />
+          <Property Name="APT_UNIT_NUMBER2" Type="nvarchar(max)" />
+          <Property Name="CITY2" Type="nvarchar(max)" />
+          <Property Name="STATE2" Type="nvarchar(max)" />
+          <Property Name="ZIP_CODE2" Type="nvarchar(max)" />
+          <Property Name="TOTAL_VALUE_CALCULATED" Type="nvarchar(max)" />
+          <Property Name="LAND_VALUE_CALCULATED" Type="nvarchar(max)" />
+          <Property Name="IMPROVEMENT_VALUE_CALCULATED" Type="nvarchar(max)" />
+          <Property Name="TOTAL_VALUE_CALCULATED_IND" Type="nvarchar(max)" />
+          <Property Name="LAND_VALUE_CALCULATED_IND" Type="nvarchar(max)" />
+          <Property Name="IMPROVEMENT_VALUE_CALCULATED_IND" Type="nvarchar(max)" />
+          <Property Name="ASSD_TOTAL_VALUE" Type="nvarchar(max)" />
+          <Property Name="ASSD_LAND_VALUE" Type="nvarchar(max)" />
+          <Property Name="ASSD_IMPROVEMENT_VALUE" Type="nvarchar(max)" />
+          <Property Name="ASSD_YEAR" Type="nvarchar(max)" />
+          <Property Name="MKT_TOTAL_VALUE" Type="nvarchar(max)" />
+          <Property Name="MKT_LAND_VALUE" Type="nvarchar(max)" />
+          <Property Name="MKT_IMPROVEMENT_VALUE" Type="nvarchar(max)" />
+          <Property Name="APPR_TOTAL_VALUE" Type="nvarchar(max)" />
+          <Property Name="APPR_LAND_VALUE" Type="nvarchar(max)" />
+          <Property Name="APPR_IMPROVEMENT_VALUE" Type="nvarchar(max)" />
+          <Property Name="TAX_AMOUNT" Type="nvarchar(max)" />
+          <Property Name="TAX_YEAR" Type="nvarchar(max)" />
+          <Property Name="DOCUMENT_YEAR" Type="nvarchar(max)" />
+          <Property Name="SALES_DEED_CATEGORY_TYPE" Type="nvarchar(max)" />
+          <Property Name="RECORDING_DATE" Type="nvarchar(max)" />
+          <Property Name="SALE_DATE" Type="nvarchar(max)" />
+          <Property Name="SALE_PRICE" Type="nvarchar(max)" />
+          <Property Name="SALE_CODE" Type="nvarchar(max)" />
+          <Property Name="SELLER_NAME" Type="nvarchar(max)" />
+          <Property Name="SellerEmail" Type="nvarchar(max)" />
+          <Property Name="SALES_TRANSACTION_CODE" Type="nvarchar(max)" />
+          <Property Name="RESIDENTIAL_MODEL_INDICATOR" Type="nvarchar(max)" />
+          <Property Name="PRIOR_DOCUMENT_YEAR" Type="nvarchar(max)" />
+          <Property Name="PRIOR_SLS_DEED_CATEGORY_TYPE" Type="nvarchar(max)" />
+          <Property Name="PRIOR_RECORDING_DATE" Type="nvarchar(max)" />
+          <Property Name="PRIOR_SALE_DATE" Type="nvarchar(max)" />
+          <Property Name="PRIOR_SALE_PRICE" Type="nvarchar(max)" />
+          <Property Name="PRIOR_SALE_CODE" Type="nvarchar(max)" />
+          <Property Name="PRIOR_DEED_TYPE" Type="nvarchar(max)" />
+          <Property Name="FRONT_FOOTAGE" Type="nvarchar(max)" />
+          <Property Name="DEPTH_FOOTAGE" Type="nvarchar(max)" />
+          <Property Name="ACRES" Type="nvarchar(max)" />
+          <Property Name="LAND_SQUARE_FOOTAGE" Type="nvarchar(max)" />
+          <Property Name="UNIVERSAL_BUILDING_SQUARE_FEET" Type="nvarchar(max)" />
+          <Property Name="BUILDING_SQUARE_FEET_IND" Type="nvarchar(max)" />
+          <Property Name="BUILDING_SQUARE_FEET" Type="nvarchar(max)" />
+          <Property Name="LIVING_SQUARE_FEET" Type="nvarchar(max)" />
+          <Property Name="GROUND_FLOOR_SQUARE_FEET" Type="nvarchar(max)" />
+          <Property Name="GROSS_SQUARE_FEET" Type="nvarchar(max)" />
+          <Property Name="ADJUSTED_GROSS_SQUARE_FEET" Type="nvarchar(max)" />
+          <Property Name="BASEMENT_SQUARE_FEET" Type="nvarchar(max)" />
+          <Property Name="GARAGE_PARKING_SQUARE_FEET" Type="nvarchar(max)" />
+          <Property Name="YEAR_BUILT" Type="nvarchar(max)" />
+          <Property Name="EFFECTIVE_YEAR_BUILT" Type="nvarchar(max)" />
+          <Property Name="BEDROOMS" Type="nvarchar(max)" />
+          <Property Name="TOTAL_ROOMS" Type="nvarchar(max)" />
+          <Property Name="TOTAL_BATHS_CALCULATED" Type="nvarchar(max)" />
+          <Property Name="TOTAL_BATHS" Type="nvarchar(max)" />
+          <Property Name="FULL_BATHS" Type="nvarchar(max)" />
+          <Property Name="HALF_BATHS" Type="nvarchar(max)" />
+          <Property Name="QTR_BATHS1" Type="nvarchar(max)" />
+          <Property Name="QTR_BATHS3" Type="nvarchar(max)" />
+          <Property Name="BATH_FIXTURES" Type="nvarchar(max)" />
+          <Property Name="AIR_CONDITIONING" Type="nvarchar(max)" />
+          <Property Name="BASEMENT_FINISH" Type="nvarchar(max)" />
+          <Property Name="BLDG_CODE" Type="nvarchar(max)" />
+          <Property Name="BLDG_IMPV_CODE" Type="nvarchar(max)" />
+          <Property Name="CONDITION" Type="nvarchar(max)" />
+          <Property Name="CONSTRUCTION_TYPE" Type="nvarchar(max)" />
+          <Property Name="EXTERIOR_WALLS" Type="nvarchar(max)" />
+          <Property Name="FIREPLACE_IND" Type="nvarchar(max)" />
+          <Property Name="FIREPLACE_NUMBER" Type="nvarchar(max)" />
+          <Property Name="FIREPLACE_TYPE" Type="nvarchar(max)" />
+          <Property Name="FOUNDATION" Type="nvarchar(max)" />
+          <Property Name="FLOOR" Type="nvarchar(max)" />
+          <Property Name="FRAME" Type="nvarchar(max)" />
+          <Property Name="GARAGE" Type="nvarchar(max)" />
+          <Property Name="HEATING" Type="nvarchar(max)" />
+          <Property Name="MOBILE_HOME_IND" Type="nvarchar(max)" />
+          <Property Name="PARKING_SPACES" Type="nvarchar(max)" />
+          <Property Name="PARKING_TYPE" Type="nvarchar(max)" />
+          <Property Name="POOL" Type="nvarchar(max)" />
+          <Property Name="POOL_CODE" Type="nvarchar(max)" />
+          <Property Name="QUALITY" Type="nvarchar(max)" />
+          <Property Name="ROOF_COVER" Type="nvarchar(max)" />
+          <Property Name="ROOF_TYPE" Type="nvarchar(max)" />
+          <Property Name="STORIES_CODE" Type="nvarchar(max)" />
+          <Property Name="STORIES_NUMBER" Type="nvarchar(max)" />
+          <Property Name="STYLE" Type="nvarchar(max)" />
+          <Property Name="UNITS_NUMBER" Type="nvarchar(max)" />
+          <Property Name="ELECTRIC_ENERGY" Type="nvarchar(max)" />
+          <Property Name="FUEL" Type="nvarchar(max)" />
+          <Property Name="SEWER" Type="nvarchar(max)" />
+          <Property Name="WATER" Type="nvarchar(max)" />
+          <Property Name="OWNER_OWNERSHIP_RIGHTS_CODE" Type="nvarchar(max)" />
+          <Property Name="SUBDIVISION_NAME" Type="nvarchar(max)" />
+          <Property Name="HOMESTEAD_EXEMPT2" Type="nvarchar(max)" />
+          <Property Name="VETERANS_EXEMPTION" Type="nvarchar(max)" />
+          <Property Name="DISABLED_EXEMPTION" Type="nvarchar(max)" />
+          <Property Name="WIDOW_EXEMPTION" Type="nvarchar(max)" />
+          <Property Name="AGED_EXEMPTION" Type="nvarchar(max)" />
+          <Property Name="CONSTRUCTION_CD" Type="nvarchar(max)" />
+          <Property Name="STYLE_CODE" Type="nvarchar(max)" />
+          <Property Name="SELLER_CARRY_BACK" Type="nvarchar(max)" />
+          <Property Name="SITUS_LATITUDE" Type="nvarchar(max)" />
+          <Property Name="SITUS_LONGITUE" Type="nvarchar(max)" />
+          <Property Name="LOAN_TO_VALUE" Type="nvarchar(max)" />
+          <Property Name="CENSUS_TRACT" Type="nvarchar(max)" />
+          <Property Name="ZONING" Type="nvarchar(max)" />
+          <Property Name="RANGE" Type="nvarchar(max)" />
+          <Property Name="TOWNSHIP" Type="nvarchar(max)" />
+          <Property Name="SECTION" Type="nvarchar(max)" />
+          <Property Name="QUARTER_SECTION" Type="nvarchar(max)" />
+          <Property Name="HOMESTEAD_EXEMPT1" Type="nvarchar(max)" />
+          <Property Name="COUNTY_USE_1" Type="nvarchar(max)" />
+          <Property Name="COUNTY_USE_2" Type="nvarchar(max)" />
+          <Property Name="NUMBER_OF_BUILDINGS" Type="nvarchar(max)" />
+          <Property Name="ListingId" Type="nvarchar(max)" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="EdinaLocalModelStoreContainer">
+          <EntitySet Name="tblSales" EntityType="Self.tblSales" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[tblSales].[SalesId] AS [SalesId], 
+[tblSales].[RecordIDs] AS [RecordIDs], 
+[tblSales].[Company] AS [Company], 
+[tblSales].[Prefix] AS [Prefix], 
+[tblSales].[First] AS [First], 
+[tblSales].[Middle] AS [Middle], 
+[tblSales].[Last] AS [Last], 
+[tblSales].[BuyerEmail] AS [BuyerEmail], 
+[tblSales].[Suffix] AS [Suffix], 
+[tblSales].[Title] AS [Title], 
+[tblSales].[PROPERTY_INDICATOR] AS [PROPERTY_INDICATOR], 
+[tblSales].[MUNICIPALITY_NAME] AS [MUNICIPALITY_NAME], 
+[tblSales].[OWNER_CORPORATE_INDICATOR] AS [OWNER_CORPORATE_INDICATOR], 
+[tblSales].[LAND_USE] AS [LAND_USE], 
+[tblSales].[OWNER_NAME] AS [OWNER_NAME], 
+[tblSales].[OWNER_NAME_2] AS [OWNER_NAME_2], 
+[tblSales].[OWNER_NAME_3] AS [OWNER_NAME_3], 
+[tblSales].[ABSENTEE_OWNER] AS [ABSENTEE_OWNER], 
+[tblSales].[Address] AS [Address], 
+[tblSales].[City] AS [City], 
+[tblSales].[State] AS [State], 
+[tblSales].[Zip] AS [Zip], 
+[tblSales].[Zip4] AS [Zip4], 
+[tblSales].[Latitude] AS [Latitude], 
+[tblSales].[Longitude] AS [Longitude], 
+[tblSales].[SCF] AS [SCF], 
+[tblSales].[ADDRESS_INDICATOR] AS [ADDRESS_INDICATOR], 
+[tblSales].[HOUSE_NUMBER_PREFIX] AS [HOUSE_NUMBER_PREFIX], 
+[tblSales].[HOUSE_NUMBER] AS [HOUSE_NUMBER], 
+[tblSales].[HOUSE_NUMBER_SUFFIX] AS [HOUSE_NUMBER_SUFFIX], 
+[tblSales].[DIRECTION] AS [DIRECTION], 
+[tblSales].[STREET_NAME] AS [STREET_NAME], 
+[tblSales].[MODE] AS [MODE], 
+[tblSales].[QUADRANT] AS [QUADRANT], 
+[tblSales].[CARRIER_CODE] AS [CARRIER_CODE], 
+[tblSales].[HOUSE_NUMBER_PREFIX2] AS [HOUSE_NUMBER_PREFIX2], 
+[tblSales].[HOUSE_NUMBER2] AS [HOUSE_NUMBER2], 
+[tblSales].[HOUSE_NUMBER_SUFFIX2] AS [HOUSE_NUMBER_SUFFIX2], 
+[tblSales].[DIRECTION2] AS [DIRECTION2], 
+[tblSales].[STREET_NAME2] AS [STREET_NAME2], 
+[tblSales].[MODE2] AS [MODE2], 
+[tblSales].[QUADRANT2] AS [QUADRANT2], 
+[tblSales].[CARRIER_CODE2] AS [CARRIER_CODE2], 
+[tblSales].[APT_UNIT_NUMBER2] AS [APT_UNIT_NUMBER2], 
+[tblSales].[CITY2] AS [CITY2], 
+[tblSales].[STATE2] AS [STATE2], 
+[tblSales].[ZIP_CODE2] AS [ZIP_CODE2], 
+[tblSales].[TOTAL_VALUE_CALCULATED] AS [TOTAL_VALUE_CALCULATED], 
+[tblSales].[LAND_VALUE_CALCULATED] AS [LAND_VALUE_CALCULATED], 
+[tblSales].[IMPROVEMENT_VALUE_CALCULATED] AS [IMPROVEMENT_VALUE_CALCULATED], 
+[tblSales].[TOTAL_VALUE_CALCULATED_IND] AS [TOTAL_VALUE_CALCULATED_IND], 
+[tblSales].[LAND_VALUE_CALCULATED_IND] AS [LAND_VALUE_CALCULATED_IND], 
+[tblSales].[IMPROVEMENT_VALUE_CALCULATED_IND] AS [IMPROVEMENT_VALUE_CALCULATED_IND], 
+[tblSales].[ASSD_TOTAL_VALUE] AS [ASSD_TOTAL_VALUE], 
+[tblSales].[ASSD_LAND_VALUE] AS [ASSD_LAND_VALUE], 
+[tblSales].[ASSD_IMPROVEMENT_VALUE] AS [ASSD_IMPROVEMENT_VALUE], 
+[tblSales].[ASSD_YEAR] AS [ASSD_YEAR], 
+[tblSales].[MKT_TOTAL_VALUE] AS [MKT_TOTAL_VALUE], 
+[tblSales].[MKT_LAND_VALUE] AS [MKT_LAND_VALUE], 
+[tblSales].[MKT_IMPROVEMENT_VALUE] AS [MKT_IMPROVEMENT_VALUE], 
+[tblSales].[APPR_TOTAL_VALUE] AS [APPR_TOTAL_VALUE], 
+[tblSales].[APPR_LAND_VALUE] AS [APPR_LAND_VALUE], 
+[tblSales].[APPR_IMPROVEMENT_VALUE] AS [APPR_IMPROVEMENT_VALUE], 
+[tblSales].[TAX_AMOUNT] AS [TAX_AMOUNT], 
+[tblSales].[TAX_YEAR] AS [TAX_YEAR], 
+[tblSales].[DOCUMENT_YEAR] AS [DOCUMENT_YEAR], 
+[tblSales].[SALES_DEED_CATEGORY_TYPE] AS [SALES_DEED_CATEGORY_TYPE], 
+[tblSales].[RECORDING_DATE] AS [RECORDING_DATE], 
+[tblSales].[SALE_DATE] AS [SALE_DATE], 
+[tblSales].[SALE_PRICE] AS [SALE_PRICE], 
+[tblSales].[SALE_CODE] AS [SALE_CODE], 
+[tblSales].[SELLER_NAME] AS [SELLER_NAME], 
+[tblSales].[SellerEmail] AS [SellerEmail], 
+[tblSales].[SALES_TRANSACTION_CODE] AS [SALES_TRANSACTION_CODE], 
+[tblSales].[RESIDENTIAL_MODEL_INDICATOR] AS [RESIDENTIAL_MODEL_INDICATOR], 
+[tblSales].[PRIOR_DOCUMENT_YEAR] AS [PRIOR_DOCUMENT_YEAR], 
+[tblSales].[PRIOR_SLS_DEED_CATEGORY_TYPE] AS [PRIOR_SLS_DEED_CATEGORY_TYPE], 
+[tblSales].[PRIOR_RECORDING_DATE] AS [PRIOR_RECORDING_DATE], 
+[tblSales].[PRIOR_SALE_DATE] AS [PRIOR_SALE_DATE], 
+[tblSales].[PRIOR_SALE_PRICE] AS [PRIOR_SALE_PRICE], 
+[tblSales].[PRIOR_SALE_CODE] AS [PRIOR_SALE_CODE], 
+[tblSales].[PRIOR_DEED_TYPE] AS [PRIOR_DEED_TYPE], 
+[tblSales].[FRONT_FOOTAGE] AS [FRONT_FOOTAGE], 
+[tblSales].[DEPTH_FOOTAGE] AS [DEPTH_FOOTAGE], 
+[tblSales].[ACRES] AS [ACRES], 
+[tblSales].[LAND_SQUARE_FOOTAGE] AS [LAND_SQUARE_FOOTAGE], 
+[tblSales].[UNIVERSAL_BUILDING_SQUARE_FEET] AS [UNIVERSAL_BUILDING_SQUARE_FEET], 
+[tblSales].[BUILDING_SQUARE_FEET_IND] AS [BUILDING_SQUARE_FEET_IND], 
+[tblSales].[BUILDING_SQUARE_FEET] AS [BUILDING_SQUARE_FEET], 
+[tblSales].[LIVING_SQUARE_FEET] AS [LIVING_SQUARE_FEET], 
+[tblSales].[GROUND_FLOOR_SQUARE_FEET] AS [GROUND_FLOOR_SQUARE_FEET], 
+[tblSales].[GROSS_SQUARE_FEET] AS [GROSS_SQUARE_FEET], 
+[tblSales].[ADJUSTED_GROSS_SQUARE_FEET] AS [ADJUSTED_GROSS_SQUARE_FEET], 
+[tblSales].[BASEMENT_SQUARE_FEET] AS [BASEMENT_SQUARE_FEET], 
+[tblSales].[GARAGE_PARKING_SQUARE_FEET] AS [GARAGE_PARKING_SQUARE_FEET], 
+[tblSales].[YEAR_BUILT] AS [YEAR_BUILT], 
+[tblSales].[EFFECTIVE_YEAR_BUILT] AS [EFFECTIVE_YEAR_BUILT], 
+[tblSales].[BEDROOMS] AS [BEDROOMS], 
+[tblSales].[TOTAL_ROOMS] AS [TOTAL_ROOMS], 
+[tblSales].[TOTAL_BATHS_CALCULATED] AS [TOTAL_BATHS_CALCULATED], 
+[tblSales].[TOTAL_BATHS] AS [TOTAL_BATHS], 
+[tblSales].[FULL_BATHS] AS [FULL_BATHS], 
+[tblSales].[HALF_BATHS] AS [HALF_BATHS], 
+[tblSales].[QTR_BATHS1] AS [QTR_BATHS1], 
+[tblSales].[QTR_BATHS3] AS [QTR_BATHS3], 
+[tblSales].[BATH_FIXTURES] AS [BATH_FIXTURES], 
+[tblSales].[AIR_CONDITIONING] AS [AIR_CONDITIONING], 
+[tblSales].[BASEMENT_FINISH] AS [BASEMENT_FINISH], 
+[tblSales].[BLDG_CODE] AS [BLDG_CODE], 
+[tblSales].[BLDG_IMPV_CODE] AS [BLDG_IMPV_CODE], 
+[tblSales].[CONDITION] AS [CONDITION], 
+[tblSales].[CONSTRUCTION_TYPE] AS [CONSTRUCTION_TYPE], 
+[tblSales].[EXTERIOR_WALLS] AS [EXTERIOR_WALLS], 
+[tblSales].[FIREPLACE_IND] AS [FIREPLACE_IND], 
+[tblSales].[FIREPLACE_NUMBER] AS [FIREPLACE_NUMBER], 
+[tblSales].[FIREPLACE_TYPE] AS [FIREPLACE_TYPE], 
+[tblSales].[FOUNDATION] AS [FOUNDATION], 
+[tblSales].[FLOOR] AS [FLOOR], 
+[tblSales].[FRAME] AS [FRAME], 
+[tblSales].[GARAGE] AS [GARAGE], 
+[tblSales].[HEATING] AS [HEATING], 
+[tblSales].[MOBILE_HOME_IND] AS [MOBILE_HOME_IND], 
+[tblSales].[PARKING_SPACES] AS [PARKING_SPACES], 
+[tblSales].[PARKING_TYPE] AS [PARKING_TYPE], 
+[tblSales].[POOL] AS [POOL], 
+[tblSales].[POOL_CODE] AS [POOL_CODE], 
+[tblSales].[QUALITY] AS [QUALITY], 
+[tblSales].[ROOF_COVER] AS [ROOF_COVER], 
+[tblSales].[ROOF_TYPE] AS [ROOF_TYPE], 
+[tblSales].[STORIES_CODE] AS [STORIES_CODE], 
+[tblSales].[STORIES_NUMBER] AS [STORIES_NUMBER], 
+[tblSales].[STYLE] AS [STYLE], 
+[tblSales].[UNITS_NUMBER] AS [UNITS_NUMBER], 
+[tblSales].[ELECTRIC_ENERGY] AS [ELECTRIC_ENERGY], 
+[tblSales].[FUEL] AS [FUEL], 
+[tblSales].[SEWER] AS [SEWER], 
+[tblSales].[WATER] AS [WATER], 
+[tblSales].[OWNER_OWNERSHIP_RIGHTS_CODE] AS [OWNER_OWNERSHIP_RIGHTS_CODE], 
+[tblSales].[SUBDIVISION_NAME] AS [SUBDIVISION_NAME], 
+[tblSales].[HOMESTEAD_EXEMPT2] AS [HOMESTEAD_EXEMPT2], 
+[tblSales].[VETERANS_EXEMPTION] AS [VETERANS_EXEMPTION], 
+[tblSales].[DISABLED_EXEMPTION] AS [DISABLED_EXEMPTION], 
+[tblSales].[WIDOW_EXEMPTION] AS [WIDOW_EXEMPTION], 
+[tblSales].[AGED_EXEMPTION] AS [AGED_EXEMPTION], 
+[tblSales].[CONSTRUCTION_CD] AS [CONSTRUCTION_CD], 
+[tblSales].[STYLE_CODE] AS [STYLE_CODE], 
+[tblSales].[SELLER_CARRY_BACK] AS [SELLER_CARRY_BACK], 
+[tblSales].[SITUS_LATITUDE] AS [SITUS_LATITUDE], 
+[tblSales].[SITUS_LONGITUE] AS [SITUS_LONGITUE], 
+[tblSales].[LOAN_TO_VALUE] AS [LOAN_TO_VALUE], 
+[tblSales].[CENSUS_TRACT] AS [CENSUS_TRACT], 
+[tblSales].[ZONING] AS [ZONING], 
+[tblSales].[RANGE] AS [RANGE], 
+[tblSales].[TOWNSHIP] AS [TOWNSHIP], 
+[tblSales].[SECTION] AS [SECTION], 
+[tblSales].[QUARTER_SECTION] AS [QUARTER_SECTION], 
+[tblSales].[HOMESTEAD_EXEMPT1] AS [HOMESTEAD_EXEMPT1], 
+[tblSales].[COUNTY_USE_1] AS [COUNTY_USE_1], 
+[tblSales].[COUNTY_USE_2] AS [COUNTY_USE_2], 
+[tblSales].[NUMBER_OF_BUILDINGS] AS [NUMBER_OF_BUILDINGS], 
+[tblSales].[ListingId] AS [ListingId], 
+[tblSales].[ModifiedDate] AS [ModifiedDate]
+FROM [dbo].[tblSales] AS [tblSales]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EdinaLocalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblSale">
+          <Key>
+            <PropertyRef Name="SalesId" />
+          </Key>
+          <Property Name="SalesId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecordIDs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Prefix" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="First" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Middle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Last" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BuyerEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Suffix" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PROPERTY_INDICATOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MUNICIPALITY_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_CORPORATE_INDICATOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LAND_USE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_NAME_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_NAME_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ABSENTEE_OWNER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Zip4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SCF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS_INDICATOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HOUSE_NUMBER_PREFIX" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HOUSE_NUMBER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HOUSE_NUMBER_SUFFIX" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DIRECTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STREET_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QUADRANT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CARRIER_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HOUSE_NUMBER_PREFIX2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HOUSE_NUMBER2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HOUSE_NUMBER_SUFFIX2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DIRECTION2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STREET_NAME2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MODE2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QUADRANT2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CARRIER_CODE2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="APT_UNIT_NUMBER2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CITY2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATE2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZIP_CODE2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TOTAL_VALUE_CALCULATED" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LAND_VALUE_CALCULATED" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMPROVEMENT_VALUE_CALCULATED" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TOTAL_VALUE_CALCULATED_IND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LAND_VALUE_CALCULATED_IND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMPROVEMENT_VALUE_CALCULATED_IND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ASSD_TOTAL_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ASSD_LAND_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ASSD_IMPROVEMENT_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ASSD_YEAR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MKT_TOTAL_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MKT_LAND_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MKT_IMPROVEMENT_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="APPR_TOTAL_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="APPR_LAND_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="APPR_IMPROVEMENT_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TAX_AMOUNT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TAX_YEAR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DOCUMENT_YEAR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SALES_DEED_CATEGORY_TYPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RECORDING_DATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SALE_DATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SALE_PRICE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SALE_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SELLER_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SellerEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SALES_TRANSACTION_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RESIDENTIAL_MODEL_INDICATOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PRIOR_DOCUMENT_YEAR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PRIOR_SLS_DEED_CATEGORY_TYPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PRIOR_RECORDING_DATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PRIOR_SALE_DATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PRIOR_SALE_PRICE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PRIOR_SALE_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PRIOR_DEED_TYPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FRONT_FOOTAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DEPTH_FOOTAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ACRES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LAND_SQUARE_FOOTAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UNIVERSAL_BUILDING_SQUARE_FEET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BUILDING_SQUARE_FEET_IND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BUILDING_SQUARE_FEET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LIVING_SQUARE_FEET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GROUND_FLOOR_SQUARE_FEET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GROSS_SQUARE_FEET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ADJUSTED_GROSS_SQUARE_FEET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BASEMENT_SQUARE_FEET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GARAGE_PARKING_SQUARE_FEET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="YEAR_BUILT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EFFECTIVE_YEAR_BUILT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BEDROOMS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TOTAL_ROOMS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TOTAL_BATHS_CALCULATED" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TOTAL_BATHS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FULL_BATHS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HALF_BATHS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QTR_BATHS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QTR_BATHS3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BATH_FIXTURES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AIR_CONDITIONING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BASEMENT_FINISH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BLDG_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BLDG_IMPV_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CONDITION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CONSTRUCTION_TYPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EXTERIOR_WALLS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FIREPLACE_IND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FIREPLACE_NUMBER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FIREPLACE_TYPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FOUNDATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FLOOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FRAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GARAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HEATING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MOBILE_HOME_IND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PARKING_SPACES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PARKING_TYPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="POOL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="POOL_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QUALITY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ROOF_COVER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ROOF_TYPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STORIES_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STORIES_NUMBER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STYLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UNITS_NUMBER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ELECTRIC_ENERGY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FUEL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SEWER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WATER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OWNER_OWNERSHIP_RIGHTS_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SUBDIVISION_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HOMESTEAD_EXEMPT2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VETERANS_EXEMPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DISABLED_EXEMPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WIDOW_EXEMPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AGED_EXEMPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CONSTRUCTION_CD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STYLE_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SELLER_CARRY_BACK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SITUS_LATITUDE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SITUS_LONGITUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LOAN_TO_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CENSUS_TRACT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZONING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RANGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TOWNSHIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SECTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QUARTER_SECTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HOMESTEAD_EXEMPT1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTY_USE_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTY_USE_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBER_OF_BUILDINGS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ListingId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="EdinaLocalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblSales" EntityType="Self.tblSale" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EdinaLocalModelStoreContainer" CdmEntityContainer="EdinaLocalEntities">
+          <EntitySetMapping Name="tblSales">
+            <EntityTypeMapping TypeName="EdinaLocalModel.tblSale">
+              <MappingFragment StoreEntitySet="tblSales">
+                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+                <ScalarProperty Name="RecordIDs" ColumnName="RecordIDs" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="First" ColumnName="First" />
+                <ScalarProperty Name="Middle" ColumnName="Middle" />
+                <ScalarProperty Name="Last" ColumnName="Last" />
+                <ScalarProperty Name="BuyerEmail" ColumnName="BuyerEmail" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PROPERTY_INDICATOR" ColumnName="PROPERTY_INDICATOR" />
+                <ScalarProperty Name="MUNICIPALITY_NAME" ColumnName="MUNICIPALITY_NAME" />
+                <ScalarProperty Name="OWNER_CORPORATE_INDICATOR" ColumnName="OWNER_CORPORATE_INDICATOR" />
+                <ScalarProperty Name="LAND_USE" ColumnName="LAND_USE" />
+                <ScalarProperty Name="OWNER_NAME" ColumnName="OWNER_NAME" />
+                <ScalarProperty Name="OWNER_NAME_2" ColumnName="OWNER_NAME_2" />
+                <ScalarProperty Name="OWNER_NAME_3" ColumnName="OWNER_NAME_3" />
+                <ScalarProperty Name="ABSENTEE_OWNER" ColumnName="ABSENTEE_OWNER" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Zip4" ColumnName="Zip4" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="SCF" ColumnName="SCF" />
+                <ScalarProperty Name="ADDRESS_INDICATOR" ColumnName="ADDRESS_INDICATOR" />
+                <ScalarProperty Name="HOUSE_NUMBER_PREFIX" ColumnName="HOUSE_NUMBER_PREFIX" />
+                <ScalarProperty Name="HOUSE_NUMBER" ColumnName="HOUSE_NUMBER" />
+                <ScalarProperty Name="HOUSE_NUMBER_SUFFIX" ColumnName="HOUSE_NUMBER_SUFFIX" />
+                <ScalarProperty Name="DIRECTION" ColumnName="DIRECTION" />
+                <ScalarProperty Name="STREET_NAME" ColumnName="STREET_NAME" />
+                <ScalarProperty Name="MODE" ColumnName="MODE" />
+                <ScalarProperty Name="QUADRANT" ColumnName="QUADRANT" />
+                <ScalarProperty Name="CARRIER_CODE" ColumnName="CARRIER_CODE" />
+                <ScalarProperty Name="HOUSE_NUMBER_PREFIX2" ColumnName="HOUSE_NUMBER_PREFIX2" />
+                <ScalarProperty Name="HOUSE_NUMBER2" ColumnName="HOUSE_NUMBER2" />
+                <ScalarProperty Name="HOUSE_NUMBER_SUFFIX2" ColumnName="HOUSE_NUMBER_SUFFIX2" />
+                <ScalarProperty Name="DIRECTION2" ColumnName="DIRECTION2" />
+                <ScalarProperty Name="STREET_NAME2" ColumnName="STREET_NAME2" />
+                <ScalarProperty Name="MODE2" ColumnName="MODE2" />
+                <ScalarProperty Name="QUADRANT2" ColumnName="QUADRANT2" />
+                <ScalarProperty Name="CARRIER_CODE2" ColumnName="CARRIER_CODE2" />
+                <ScalarProperty Name="APT_UNIT_NUMBER2" ColumnName="APT_UNIT_NUMBER2" />
+                <ScalarProperty Name="CITY2" ColumnName="CITY2" />
+                <ScalarProperty Name="STATE2" ColumnName="STATE2" />
+                <ScalarProperty Name="ZIP_CODE2" ColumnName="ZIP_CODE2" />
+                <ScalarProperty Name="TOTAL_VALUE_CALCULATED" ColumnName="TOTAL_VALUE_CALCULATED" />
+                <ScalarProperty Name="LAND_VALUE_CALCULATED" ColumnName="LAND_VALUE_CALCULATED" />
+                <ScalarProperty Name="IMPROVEMENT_VALUE_CALCULATED" ColumnName="IMPROVEMENT_VALUE_CALCULATED" />
+                <ScalarProperty Name="TOTAL_VALUE_CALCULATED_IND" ColumnName="TOTAL_VALUE_CALCULATED_IND" />
+                <ScalarProperty Name="LAND_VALUE_CALCULATED_IND" ColumnName="LAND_VALUE_CALCULATED_IND" />
+                <ScalarProperty Name="IMPROVEMENT_VALUE_CALCULATED_IND" ColumnName="IMPROVEMENT_VALUE_CALCULATED_IND" />
+                <ScalarProperty Name="ASSD_TOTAL_VALUE" ColumnName="ASSD_TOTAL_VALUE" />
+                <ScalarProperty Name="ASSD_LAND_VALUE" ColumnName="ASSD_LAND_VALUE" />
+                <ScalarProperty Name="ASSD_IMPROVEMENT_VALUE" ColumnName="ASSD_IMPROVEMENT_VALUE" />
+                <ScalarProperty Name="ASSD_YEAR" ColumnName="ASSD_YEAR" />
+                <ScalarProperty Name="MKT_TOTAL_VALUE" ColumnName="MKT_TOTAL_VALUE" />
+                <ScalarProperty Name="MKT_LAND_VALUE" ColumnName="MKT_LAND_VALUE" />
+                <ScalarProperty Name="MKT_IMPROVEMENT_VALUE" ColumnName="MKT_IMPROVEMENT_VALUE" />
+                <ScalarProperty Name="APPR_TOTAL_VALUE" ColumnName="APPR_TOTAL_VALUE" />
+                <ScalarProperty Name="APPR_LAND_VALUE" ColumnName="APPR_LAND_VALUE" />
+                <ScalarProperty Name="APPR_IMPROVEMENT_VALUE" ColumnName="APPR_IMPROVEMENT_VALUE" />
+                <ScalarProperty Name="TAX_AMOUNT" ColumnName="TAX_AMOUNT" />
+                <ScalarProperty Name="TAX_YEAR" ColumnName="TAX_YEAR" />
+                <ScalarProperty Name="DOCUMENT_YEAR" ColumnName="DOCUMENT_YEAR" />
+                <ScalarProperty Name="SALES_DEED_CATEGORY_TYPE" ColumnName="SALES_DEED_CATEGORY_TYPE" />
+                <ScalarProperty Name="RECORDING_DATE" ColumnName="RECORDING_DATE" />
+                <ScalarProperty Name="SALE_DATE" ColumnName="SALE_DATE" />
+                <ScalarProperty Name="SALE_PRICE" ColumnName="SALE_PRICE" />
+                <ScalarProperty Name="SALE_CODE" ColumnName="SALE_CODE" />
+                <ScalarProperty Name="SELLER_NAME" ColumnName="SELLER_NAME" />
+                <ScalarProperty Name="SellerEmail" ColumnName="SellerEmail" />
+                <ScalarProperty Name="SALES_TRANSACTION_CODE" ColumnName="SALES_TRANSACTION_CODE" />
+                <ScalarProperty Name="RESIDENTIAL_MODEL_INDICATOR" ColumnName="RESIDENTIAL_MODEL_INDICATOR" />
+                <ScalarProperty Name="PRIOR_DOCUMENT_YEAR" ColumnName="PRIOR_DOCUMENT_YEAR" />
+                <ScalarProperty Name="PRIOR_SLS_DEED_CATEGORY_TYPE" ColumnName="PRIOR_SLS_DEED_CATEGORY_TYPE" />
+                <ScalarProperty Name="PRIOR_RECORDING_DATE" ColumnName="PRIOR_RECORDING_DATE" />
+                <ScalarProperty Name="PRIOR_SALE_DATE" ColumnName="PRIOR_SALE_DATE" />
+                <ScalarProperty Name="PRIOR_SALE_PRICE" ColumnName="PRIOR_SALE_PRICE" />
+                <ScalarProperty Name="PRIOR_SALE_CODE" ColumnName="PRIOR_SALE_CODE" />
+                <ScalarProperty Name="PRIOR_DEED_TYPE" ColumnName="PRIOR_DEED_TYPE" />
+                <ScalarProperty Name="FRONT_FOOTAGE" ColumnName="FRONT_FOOTAGE" />
+                <ScalarProperty Name="DEPTH_FOOTAGE" ColumnName="DEPTH_FOOTAGE" />
+                <ScalarProperty Name="ACRES" ColumnName="ACRES" />
+                <ScalarProperty Name="LAND_SQUARE_FOOTAGE" ColumnName="LAND_SQUARE_FOOTAGE" />
+                <ScalarProperty Name="UNIVERSAL_BUILDING_SQUARE_FEET" ColumnName="UNIVERSAL_BUILDING_SQUARE_FEET" />
+                <ScalarProperty Name="BUILDING_SQUARE_FEET_IND" ColumnName="BUILDING_SQUARE_FEET_IND" />
+                <ScalarProperty Name="BUILDING_SQUARE_FEET" ColumnName="BUILDING_SQUARE_FEET" />
+                <ScalarProperty Name="LIVING_SQUARE_FEET" ColumnName="LIVING_SQUARE_FEET" />
+                <ScalarProperty Name="GROUND_FLOOR_SQUARE_FEET" ColumnName="GROUND_FLOOR_SQUARE_FEET" />
+                <ScalarProperty Name="GROSS_SQUARE_FEET" ColumnName="GROSS_SQUARE_FEET" />
+                <ScalarProperty Name="ADJUSTED_GROSS_SQUARE_FEET" ColumnName="ADJUSTED_GROSS_SQUARE_FEET" />
+                <ScalarProperty Name="BASEMENT_SQUARE_FEET" ColumnName="BASEMENT_SQUARE_FEET" />
+                <ScalarProperty Name="GARAGE_PARKING_SQUARE_FEET" ColumnName="GARAGE_PARKING_SQUARE_FEET" />
+                <ScalarProperty Name="YEAR_BUILT" ColumnName="YEAR_BUILT" />
+                <ScalarProperty Name="EFFECTIVE_YEAR_BUILT" ColumnName="EFFECTIVE_YEAR_BUILT" />
+                <ScalarProperty Name="BEDROOMS" ColumnName="BEDROOMS" />
+                <ScalarProperty Name="TOTAL_ROOMS" ColumnName="TOTAL_ROOMS" />
+                <ScalarProperty Name="TOTAL_BATHS_CALCULATED" ColumnName="TOTAL_BATHS_CALCULATED" />
+                <ScalarProperty Name="TOTAL_BATHS" ColumnName="TOTAL_BATHS" />
+                <ScalarProperty Name="FULL_BATHS" ColumnName="FULL_BATHS" />
+                <ScalarProperty Name="HALF_BATHS" ColumnName="HALF_BATHS" />
+                <ScalarProperty Name="QTR_BATHS1" ColumnName="QTR_BATHS1" />
+                <ScalarProperty Name="QTR_BATHS3" ColumnName="QTR_BATHS3" />
+                <ScalarProperty Name="BATH_FIXTURES" ColumnName="BATH_FIXTURES" />
+                <ScalarProperty Name="AIR_CONDITIONING" ColumnName="AIR_CONDITIONING" />
+                <ScalarProperty Name="BASEMENT_FINISH" ColumnName="BASEMENT_FINISH" />
+                <ScalarProperty Name="BLDG_CODE" ColumnName="BLDG_CODE" />
+                <ScalarProperty Name="BLDG_IMPV_CODE" ColumnName="BLDG_IMPV_CODE" />
+                <ScalarProperty Name="CONDITION" ColumnName="CONDITION" />
+                <ScalarProperty Name="CONSTRUCTION_TYPE" ColumnName="CONSTRUCTION_TYPE" />
+                <ScalarProperty Name="EXTERIOR_WALLS" ColumnName="EXTERIOR_WALLS" />
+                <ScalarProperty Name="FIREPLACE_IND" ColumnName="FIREPLACE_IND" />
+                <ScalarProperty Name="FIREPLACE_NUMBER" ColumnName="FIREPLACE_NUMBER" />
+                <ScalarProperty Name="FIREPLACE_TYPE" ColumnName="FIREPLACE_TYPE" />
+                <ScalarProperty Name="FOUNDATION" ColumnName="FOUNDATION" />
+                <ScalarProperty Name="FLOOR" ColumnName="FLOOR" />
+                <ScalarProperty Name="FRAME" ColumnName="FRAME" />
+                <ScalarProperty Name="GARAGE" ColumnName="GARAGE" />
+                <ScalarProperty Name="HEATING" ColumnName="HEATING" />
+                <ScalarProperty Name="MOBILE_HOME_IND" ColumnName="MOBILE_HOME_IND" />
+                <ScalarProperty Name="PARKING_SPACES" ColumnName="PARKING_SPACES" />
+                <ScalarProperty Name="PARKING_TYPE" ColumnName="PARKING_TYPE" />
+                <ScalarProperty Name="POOL" ColumnName="POOL" />
+                <ScalarProperty Name="POOL_CODE" ColumnName="POOL_CODE" />
+                <ScalarProperty Name="QUALITY" ColumnName="QUALITY" />
+                <ScalarProperty Name="ROOF_COVER" ColumnName="ROOF_COVER" />
+                <ScalarProperty Name="ROOF_TYPE" ColumnName="ROOF_TYPE" />
+                <ScalarProperty Name="STORIES_CODE" ColumnName="STORIES_CODE" />
+                <ScalarProperty Name="STORIES_NUMBER" ColumnName="STORIES_NUMBER" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="UNITS_NUMBER" ColumnName="UNITS_NUMBER" />
+                <ScalarProperty Name="ELECTRIC_ENERGY" ColumnName="ELECTRIC_ENERGY" />
+                <ScalarProperty Name="FUEL" ColumnName="FUEL" />
+                <ScalarProperty Name="SEWER" ColumnName="SEWER" />
+                <ScalarProperty Name="WATER" ColumnName="WATER" />
+                <ScalarProperty Name="OWNER_OWNERSHIP_RIGHTS_CODE" ColumnName="OWNER_OWNERSHIP_RIGHTS_CODE" />
+                <ScalarProperty Name="SUBDIVISION_NAME" ColumnName="SUBDIVISION_NAME" />
+                <ScalarProperty Name="HOMESTEAD_EXEMPT2" ColumnName="HOMESTEAD_EXEMPT2" />
+                <ScalarProperty Name="VETERANS_EXEMPTION" ColumnName="VETERANS_EXEMPTION" />
+                <ScalarProperty Name="DISABLED_EXEMPTION" ColumnName="DISABLED_EXEMPTION" />
+                <ScalarProperty Name="WIDOW_EXEMPTION" ColumnName="WIDOW_EXEMPTION" />
+                <ScalarProperty Name="AGED_EXEMPTION" ColumnName="AGED_EXEMPTION" />
+                <ScalarProperty Name="CONSTRUCTION_CD" ColumnName="CONSTRUCTION_CD" />
+                <ScalarProperty Name="STYLE_CODE" ColumnName="STYLE_CODE" />
+                <ScalarProperty Name="SELLER_CARRY_BACK" ColumnName="SELLER_CARRY_BACK" />
+                <ScalarProperty Name="SITUS_LATITUDE" ColumnName="SITUS_LATITUDE" />
+                <ScalarProperty Name="SITUS_LONGITUE" ColumnName="SITUS_LONGITUE" />
+                <ScalarProperty Name="LOAN_TO_VALUE" ColumnName="LOAN_TO_VALUE" />
+                <ScalarProperty Name="CENSUS_TRACT" ColumnName="CENSUS_TRACT" />
+                <ScalarProperty Name="ZONING" ColumnName="ZONING" />
+                <ScalarProperty Name="RANGE" ColumnName="RANGE" />
+                <ScalarProperty Name="TOWNSHIP" ColumnName="TOWNSHIP" />
+                <ScalarProperty Name="SECTION" ColumnName="SECTION" />
+                <ScalarProperty Name="QUARTER_SECTION" ColumnName="QUARTER_SECTION" />
+                <ScalarProperty Name="HOMESTEAD_EXEMPT1" ColumnName="HOMESTEAD_EXEMPT1" />
+                <ScalarProperty Name="COUNTY_USE_1" ColumnName="COUNTY_USE_1" />
+                <ScalarProperty Name="COUNTY_USE_2" ColumnName="COUNTY_USE_2" />
+                <ScalarProperty Name="NUMBER_OF_BUILDINGS" ColumnName="NUMBER_OF_BUILDINGS" />
+                <ScalarProperty Name="ListingId" ColumnName="ListingId" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
